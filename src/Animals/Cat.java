@@ -1,12 +1,44 @@
-package lesson1;
+package Animals;
 
 import java.time.LocalDate;
 import java.util.Arrays;
 
 public class Cat {
+    public static Integer count;
+    public static class Breed {
+        private String name;
+        private String country;
+        private String hairType;
+
+        public Breed(String name, String country, String hairType) {
+            this.name = name;
+            this.country = country;
+            this.hairType = hairType;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+
+        public String getCountry() {
+            return country;
+        }
+
+
+        public String getHairType() {
+            return hairType;
+        }
+    }
+
+
+
     private String name;
-    private int birthYear;
+    private final int birthYear;
     private Cat[] friends;
+    private Breed breed;
+
+
 
     public Cat(String name) {
         this(name, LocalDate.now().getYear());
@@ -61,6 +93,14 @@ public class Cat {
 
     public int getAge() {
         return LocalDate.now().getYear() - birthYear;
+    }
+
+    public Breed getBreed() {
+        return breed;
+    }
+
+    public void setBreed(Breed breed) {
+        this.breed = breed;
     }
 }
 
